@@ -1,0 +1,7 @@
+CREATE OR REPLACE TRIGGER users_before_insert
+BEFORE INSERT
+   ON users
+   FOR EACH ROW
+BEGIN  
+   :new.id := USERS_SEQ.NEXTVAL;   
+END;
